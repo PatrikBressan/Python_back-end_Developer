@@ -9,12 +9,12 @@ import re
 def validate_numero_telefone(phone_number):
    
     # TODO: Defina um padrão de expressão regular (regex) para validar números de telefone no formato (XX) 9XXXX-XXXX:
-    pattern = '\(\d{6}\)\s9[0-9]{4}\-[0-9]{4}'
+    pattern = re.compile(r'\(\d{2}\)\s9\d{4}-\d{4}')
    
     # A função 're.match()' para verifica se o padrão definido corresponde ao número de telefone fornecido.
     # O 're.match()' retorna um objeto 'match' se houver correspondência no início da string, caso contrário, retorna 'None'.
-    if re.match(pattern, phone_number):  
-      return('Número de telefone é válido.')
+    if re.match(pattern, phone_number):
+      return('Número de telefone válido.')
     else:
       return('Número de telefone inválido.')
         
@@ -24,7 +24,8 @@ def validate_numero_telefone(phone_number):
     
 
 # Solicita ao usuário que insira um número de telefone e armazena o valor fornecido na variável 'phone_number'.
-phone_number = input('(88) 98888-8888')  
+phone_number = input()
+#(88) 98888-8888  
 
 # TODO: Chame a função 'validate_numero_telefone()' com o número de telefone fornecido como argumento e armazene o resultado retornado na variável 'result'.
 result = validate_numero_telefone(phone_number)
