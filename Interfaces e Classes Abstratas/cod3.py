@@ -12,7 +12,7 @@ ABC: abstract basic class
 '''
 
 # Criando classes abstratas com o módulo ABC
-from abc import ABC, abstractmethod, abstractproperty
+from abc import ABC, abstractmethod
 
 class ControleRemoto(ABC):
     # Dessa forma, com '@abstractmethod', toda classe que estender a classe ControleRemoto, deve obrigatoriamente implementar os métodos ligar e desligar.
